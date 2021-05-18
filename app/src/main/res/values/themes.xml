@@ -13,4 +13,10 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme_Bottom_Navigation">
+        <item name="colorPrimary">@color/black</item>
+        <item name="fontFamily">@font/roboto_slab_bold</item>
+        <item name="android:textSize">12sp</item>
+    </style>
 </resources>
