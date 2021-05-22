@@ -12,4 +12,17 @@
     <string name="sign_up">SIGN UP</string>
     <string name="title_login">LOGIN</string>
     <string name="copyright">by Neutr.AI \n v 1.0.</string>
+    <string name="hi_name">Hi! Akbar</string>
+    <string name="good">Baik</string>
+    <string name="bad">Kurang Baik</string>
+    <string name="form">Form</string>
+    <string name="call_report">Call Report</string>
+    <string name="for_you">Hanya Untukmu</string>
+    <string name="news">News</string>
+    <string name="see_all">See all</string>
+    <string name="bentuk_bentuk_kekerasan">Bentuk-Bentuk Kekerasan</string>
+    <string name="ex_1000">1000</string>
+    <string name="sembuh">Sembuh</string>
+    <string name="positif">Positif</string>
+    <string name="update_covid">Update Terakhir : 22 Mei 2021</string>
 </resources>

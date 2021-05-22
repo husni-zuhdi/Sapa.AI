@@ -7,6 +7,7 @@ import android.os.Handler
 import android.view.Window
 import android.view.WindowManager
 import com.project.sapaai.R
+import com.project.sapaai.ui.HomeActivity
 import com.project.sapaai.ui.login.LoginActivity
 
 class SplashActivity : AppCompatActivity() {
@@ -20,7 +21,7 @@ class SplashActivity : AppCompatActivity() {
             setContentView(R.layout.activity_splash)
 
             Handler().postDelayed({
-                startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
+                startActivity(Intent(this@SplashActivity, HomeActivity::class.java))
                 finish()
             }, 4000)
         }
