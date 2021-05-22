@@ -12,6 +12,9 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+        supportActionBar?.hide()
+
         button = findViewById(R.id.buttonSignIn)
         button.setOnClickListener{
             startActivity(Intent(this, HomeActivity::class.java))
