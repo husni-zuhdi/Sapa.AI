@@ -5,4 +5,4 @@ This is Cloud Computing Development Branch
 
 # Changelog
 10/05/21/a : Update README.md
-
+24/05/21/a : Update folders and add machine learning model
