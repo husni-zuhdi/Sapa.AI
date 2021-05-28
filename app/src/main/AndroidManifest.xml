@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.project.sapaai">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,11 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SapaAi">
+        <activity android:name=".ui.call.CallActivity"></activity>
         <activity
             android:name=".ui.HomeActivity"
             android:label="@string/title_activity_home"
-            android:parentActivityName=".ui.splash.SplashActivity">
-        </activity>
+            android:parentActivityName=".ui.splash.SplashActivity"></activity>
         <activity
             android:name=".ui.splash.SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
