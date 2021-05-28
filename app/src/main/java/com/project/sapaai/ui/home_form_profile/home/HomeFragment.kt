@@ -13,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.project.sapaai.R
 import com.project.sapaai.databinding.FragmentHomeBinding
 import com.project.sapaai.ui.call.CallActivity
+import com.project.sapaai.ui.form.FormActivity
 
 
 class HomeFragment : Fragment() {
@@ -58,6 +59,11 @@ class HomeFragment : Fragment() {
                 startActivity(it)
             }
         }
+        binding.homeFlForm.setOnClickListener {
+            Intent(context, FormActivity::class.java).also {
+                startActivity(it)
+            }
+        }
 
         flipper = binding.homeVlHanyauntukmu
         for (i in 0 until gallery_grid_Images.size) {
@@ -71,7 +77,7 @@ class HomeFragment : Fragment() {
         val image = ImageView(context)
         image.setBackgroundResource(res)
         flipper.addView(image)
-        flipper.setFlipInterval(5000)
-        flipper.setAutoStart(true)
+        flipper.flipInterval = 5000
+        flipper.isAutoStart = true
     }
 }

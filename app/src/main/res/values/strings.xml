@@ -6,11 +6,23 @@
     <string name="title_notifications">Notifications</string>
     <string name="title_help">Help</string>
     <string name="title_profile">Profile</string>
+    <string name="title_form">Form</string>
 
+    <string name="hint_korban">Nama Korban</string>
+    <string name="hint_pelaku">Nama Tersangka </string>
+    <string name="hint_kategori">Kategori Layanan</string>
+    <string name="hint_kronologi">Kronologi Kejadian</string>
+    <string name="hint_photo">Photo Pendukung</string>
+    <string name="hint_fullname">Fullname</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_phonenumber">Phone Number</string>
     <string name="hint_email">Email</string>
     <string name="hint_password">Password</string>
     <string name="sign_up">SIGN UP</string>
     <string name="title_login">LOGIN</string>
+    <string name="title_register">Register</string>
+    <string name="title_dont">don\'t have account? Register</string>
+    <string name="title_already">Already have an account? Login</string>
     <string name="copyright">by Neutr.AI \n v 1.0.</string>
     <string name="hi_name">Hi! Akbar</string>
     <string name="good">Baik</string>

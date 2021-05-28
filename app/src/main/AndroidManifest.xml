@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.project.sapaai">
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:allowBackup="true"
@@ -12,11 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SapaAi">
-        <activity android:name=".ui.call.CallActivity"></activity>
+        <activity android:name=".ui.ProfileActivity"></activity>
+        <activity android:name=".ui.form.FormActivity" />
+        <activity android:name=".ui.login_register.RegisterActivity" />
+        <activity android:name=".ui.call.CallActivity" />
         <activity
             android:name=".ui.HomeActivity"
             android:label="@string/title_activity_home"
-            android:parentActivityName=".ui.splash.SplashActivity"></activity>
+            android:parentActivityName=".ui.splash.SplashActivity" />
         <activity
             android:name=".ui.splash.SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -26,7 +29,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.login.LoginActivity" />
+        <activity android:name=".ui.login_register.LoginActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

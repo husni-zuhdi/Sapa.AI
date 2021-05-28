@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.login_register.LoginActivity"
+    tools:context=".ui.login_register.RegisterActivity"
     android:background ="#A6D3F2">
 
     <ImageView
@@ -19,58 +19,100 @@
 
     <View
         android:id="@+id/view"
-        android:layout_width="354dp"
-        android:layout_height="338dp"
-        android:background="@drawable/shape_back_button_great"
+        android:layout_width="351dp"
+        android:layout_height="495dp"
+        android:background="@drawable/shape_back_card"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.733"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498" />
+        app:layout_constraintVertical_bias="0.614" />
+
 
     <TextView
-        android:id="@+id/login"
+        android:id="@+id/Register"
         android:layout_width="192dp"
-        android:layout_height="72dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginBottom="9dp"
+        android:layout_height="59dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="95dp"
         android:gravity="center"
-        android:text="@string/title_login"
+        android:text="@string/title_register"
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view" />
 
-        app:layout_constraintBottom_toTopOf="@+id/fieldEmail"
+    <EditText
+        android:id="@+id/fieldUsername"
+        android:layout_width="292dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:hint="   Username"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/icon"
-        app:layout_constraintVertical_bias="0.058" />
+        app:layout_constraintTop_toBottomOf="@+id/Register" />
+
+    <EditText
+        android:id="@+id/fieldFullname"
+        android:layout_width="292dp"
+        android:layout_height="53dp"
+        android:ellipsize="end"
+        android:hint="   Fullname"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fieldUsername" />
 
     <EditText
         android:id="@+id/fieldEmail"
         android:layout_width="292dp"
         android:layout_height="53dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginBottom="12dp"
         android:ellipsize="end"
         android:hint="   Email"
         android:inputType="textEmailAddress"
         android:maxLines="1"
+        app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view" />
+        app:layout_constraintTop_toBottomOf="@+id/fieldPhonenumber"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/fieldPhonenumber"
+        android:layout_width="292dp"
+        android:layout_height="53dp"
+        android:ellipsize="end"
+        android:hint="   Phone Number"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fieldFullname" />
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
         android:layout_width="292dp"
         android:layout_height="53dp"
         android:layout_gravity="center"
-        android:hint="@string/hint_password"
+        android:hint="Password"
         android:layout_marginTop="1dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fieldEmail"
         app:passwordToggleEnabled="true">
@@ -80,26 +122,32 @@
             android:layout_width="292dp"
             android:layout_height="53dp"
             android:background="#FFF"
+            android:ellipsize="end"
+            android:inputType="textPassword"
             android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.566"
+            app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="413dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
 
     <Button
-        android:id="@+id/buttonSignIn"
+        android:id="@+id/buttonSignUp"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
+        android:layout_marginTop="67dp"
         android:layout_marginBottom="1dp"
-        android:text="@string/title_login"
+        android:text="@string/title_register"
         android:textColor="#FF000000"
         android:theme="@style/Theme_Bottom_Login"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toTopOf="@+id/tv_register"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.547"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/tv_register"
@@ -107,7 +155,7 @@
         android:layout_height="42dp"
         android:layout_marginBottom="18dp"
         android:gravity="center"
-        android:text="@string/title_dont"
+        android:text="@string/title_already"
         android:textColor="@color/black"
         android:textSize="15sp"
         android:textStyle="bold"
