@@ -3,7 +3,7 @@
     <style name="Theme.SapaAi" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
 <!--        <item name="colorPrimary">@color/purple_500</item>-->
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimaryVariant">@color/bg_color</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -11,11 +11,16 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorOnSecondary</item>
+        <item name="actionBarStyle">@style/actionBar</item>
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="actionBar">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
     <style name="Theme_Bottom_Navigation">
-        <item name="colorPrimary">@color/black</item>
         <item name="fontFamily">@font/roboto_slab_bold</item>
         <item name="android:textSize">12sp</item>
     </style>
@@ -70,6 +75,12 @@
     <style name="Theme_Roboto_Bold14">
         <item name="fontFamily">@font/roboto_slab_bold</item>
         <item name="android:textSize">14dp</item>
+    </style>
+
+    <style name="Theme_Roboto_Bold48">
+        <item name="fontFamily">@font/roboto_slab_bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">48dp</item>
     </style>
 
 </resources>
