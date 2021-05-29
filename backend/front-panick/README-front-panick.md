@@ -6,8 +6,4 @@ untuk fitur panick button
 
 API dapat dikemas menggunakan:
 
-1. Cloud Run
-
-2. Cloud Function
-
-3. Firebase - Cloud Function
+1. Cloud Run [Untuk sekarang pakai ini dulu]
