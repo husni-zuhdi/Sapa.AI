@@ -11,3 +11,5 @@ This is Machine Learning Development branch
 14/05/21/a : First version of our classification model to classify reporting texts into 8 classes. Loss is pretty low, the prediction result is also intuitive enough
 
 18/05/21/a : This commit add an .ipynb file containing our process in developing speech recognition (speech-to-text) machine learning system, which is then considered the development to be dropped as the regulation permit us to use google automatic speech-to-text as long as we create another original model.
+
+29/05/21/a : Tidy up some folders
