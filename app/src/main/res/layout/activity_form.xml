@@ -71,6 +71,9 @@
         app:layout_constraintTop_toBottomOf="@+id/fieldKorban" />
 
 
+
+
+
     <TextView
         android:id="@+id/kategori"
         android:layout_width="130dp"
@@ -132,10 +135,8 @@
         android:layout_below="@id/checkBox2"
         android:layout_centerInParent="true"
         android:layout_marginStart="40dp"
-        android:layout_marginBottom="30dp"
         android:text="rehabilitasi sosial"
         android:textSize="10sp"
-        app:layout_constraintBottom_toTopOf="@+id/fieldKronologi"
         app:layout_constraintEnd_toStartOf="@+id/checkBox8"
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
@@ -185,26 +186,10 @@
         android:layout_below="@id/checkBox2"
         android:layout_centerInParent="true"
         android:layout_marginEnd="25dp"
-        android:layout_marginBottom="30dp"
         android:text="Jaminan Keselamatan"
         android:textSize="10sp"
-        app:layout_constraintBottom_toTopOf="@+id/fieldKronologi"
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintTop_toBottomOf="@+id/checkBox7" />
-
-    <EditText
-        android:id="@+id/fieldKronologi"
-        android:layout_width="293dp"
-        android:layout_height="90dp"
-        android:layout_marginTop="291dp"
-        android:ellipsize="end"
-        android:hint="@string/hint_kronologi"
-        android:inputType="textEmailAddress"
-        android:maxLines="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.575"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view" />
 
     <Button
         android:id="@+id/buttonForm"
@@ -233,6 +218,52 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/fieldKronologi"
+        android:layout_width="280dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="344dp"
+        android:ellipsize="end"
+        android:hint="@string/hint_kronologi"
+        android:inputType="textEmailAddress"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/fieldDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="94dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="133dp"
+        android:layout_marginBottom="30dp"
+        android:text="Date Range"
+        app:layout_constraintBottom_toTopOf="@+id/fieldKronologi"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox8"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/btn_once_date"
+        style="@style/Base.Widget.AppCompat.ImageButton"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/ic_date_range"
+        app:layout_constraintBottom_toTopOf="@+id/fieldKronologi"
+        app:layout_constraintEnd_toStartOf="@+id/fieldDate"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox4"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

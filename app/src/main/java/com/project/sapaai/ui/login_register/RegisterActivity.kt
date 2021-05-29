@@ -65,6 +65,8 @@ class RegisterActivity : AppCompatActivity() {
                             ?.setValue(fieldPhonenumber.text.toString())
                         rightDb?.child("email")
                             ?.setValue(fieldEmail.text.toString())
+                        rightDb?.child("password")
+                            ?.setValue(fieldPassword.text.toString())
 
                         Toast.makeText(
                             this@RegisterActivity, "Registration Success. ",

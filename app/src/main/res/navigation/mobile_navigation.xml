@@ -17,9 +17,9 @@
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_dashboard" />
 
-    <fragment
+    <activity
         android:id="@+id/navigation_notifications"
-        android:name="com.project.sapaai.ui.home_form_profile.notifications.NotificationsFragment"
+        android:name="com.project.sapaai.ui.ProfileActivity"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_notifications" />
+        tools:layout="@layout/activity_profile" />
 </navigation>

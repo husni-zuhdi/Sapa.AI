@@ -52,13 +52,13 @@
         android:id="@+id/fieldEmail"
         android:layout_width="292dp"
         android:layout_height="53dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="88dp"
         android:ellipsize="end"
         android:hint="   Email"
         android:inputType="textEmailAddress"
         android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.563"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view" />
 
@@ -67,10 +67,10 @@
         android:layout_width="292dp"
         android:layout_height="53dp"
         android:layout_gravity="center"
-        android:hint="@string/hint_password"
+        android:hint="Password"
         android:layout_marginTop="1dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fieldEmail"
         app:passwordToggleEnabled="true">
@@ -80,7 +80,12 @@
             android:layout_width="292dp"
             android:layout_height="53dp"
             android:background="#FFF"
+            android:ellipsize="end"
+            android:inputType="textPassword"
             android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.566"
+            app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="413dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
