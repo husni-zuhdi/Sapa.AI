@@ -19,8 +19,8 @@
 
     <View
         android:id="@+id/view"
-        android:layout_width="354dp"
-        android:layout_height="338dp"
+        android:layout_width="356dp"
+        android:layout_height="380dp"
         android:background="@drawable/shape_back_button_great"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,8 +67,8 @@
         android:layout_width="292dp"
         android:layout_height="53dp"
         android:layout_gravity="center"
-        android:hint="Password"
         android:layout_marginTop="1dp"
+        android:hint="Password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.566"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,28 +89,76 @@
             tools:layout_editor_absoluteY="413dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <CheckBox
+        android:id="@+id/checkBox1"
+        android:layout_width="130dp"
+        android:layout_height="20dp"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginBottom="9dp"
+        android:text="Remember me"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSignIn"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/forget"
+        style="@style/Theme_Footer"
+        android:layout_width="87dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="9dp"
+        android:hint="Forget Password"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSignIn"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toEndOf="@+id/checkBox1"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+        app:layout_constraintVertical_bias="0.038" />
+
+    <ImageView
+        android:id="@+id/buttonGoogle"
+        android:layout_width="194dp"
+        android:layout_height="59dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="100dp"
+
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="82dp"
+        android:src="@drawable/ic_google"
+        app:layout_constraintBottom_toTopOf="@+id/buttonSignIn"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox1"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/buttonSignIn"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
         android:layout_marginBottom="1dp"
         android:text="@string/title_login"
         android:textColor="#FF000000"
         android:theme="@style/Theme_Bottom_Login"
         app:cornerRadius="20dp"
+
         app:layout_constraintBottom_toTopOf="@+id/tv_register"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.548"
+        app:layout_constraintStart_toStartOf="@+id/view" />
 
     <TextView
         android:id="@+id/tv_register"
         android:layout_width="284dp"
         android:layout_height="42dp"
-        android:layout_marginBottom="18dp"
+        android:layout_marginBottom="4dp"
         android:gravity="center"
         android:text="@string/title_dont"
         android:textColor="@color/black"
@@ -118,6 +166,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#A6D3F2">
+
+    <ImageButton
+        android:id="@+id/buttonHome"
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
+        android:background="#FFF"
+        android:src="@drawable/home"
+        android:text="Home"
+        android:textColor="#FF000000"
+        app:cornerRadius="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/buttonPost"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <ImageButton
+        android:id="@+id/buttonPost"
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
+        android:background="#FFF"
+        android:src="@drawable/post"
+        android:text="Home"
+        android:textColor="#FF000000"
+        app:cornerRadius="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <ImageButton
+        android:id="@+id/buttonProfile"
+        android:layout_width="140dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
+        android:background="#FFF"
+        android:src="@drawable/profile"
+        android:text="Home"
+        android:textColor="#FF000000"
+        app:cornerRadius="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/buttonPost"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
+
+    <Button
+        android:id="@+id/buttonEdit"
+        android:layout_width="267dp"
+        android:layout_height="52dp"
+        android:layout_marginBottom="9dp"
+        android:text="Edit Profil"
+        android:textColor="#FF000000"
+        android:theme="@style/Theme_Bottom_Login"
+        app:cornerRadius="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fieldEmail" />
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="206dp"
+        android:layout_height="131dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/ic_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="374dp"
+        android:layout_height="390dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/shape_back_button_great"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fieldEmail" />
+
+    <TextView
+        android:id="@+id/fieldUsername"
+        android:layout_width="292dp"
+        android:layout_height="30dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:textColor="#FF000000"
+        android:hint="Username"
+        android:maxLines="1"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/icon" />
+
+    <TextView
+        android:id="@+id/fieldEmail"
+        android:layout_width="292dp"
+        android:layout_height="30dp"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:hint="   Email"
+        android:maxLines="1"
+        android:textColor="#FF000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fieldUsername" />
+
+    <ImageButton
+        android:id="@+id/VersionButton"
+        style="@style/Base.Widget.AppCompat.ImageButton"
+        android:layout_width="355dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="5dp"
+        android:background="#FFF"
+        android:src="@drawable/profile_versi"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.714"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <ImageButton
+        android:id="@+id/KebijakanButton"
+        style="@style/Base.Widget.AppCompat.ImageButton"
+        android:layout_width="355dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="7dp"
+        android:background="#FFF"
+        android:src="@drawable/profile_kebijakan"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/VersionButton" />
+
+    <ImageButton
+        android:id="@+id/BantuanButton"
+        style="@style/Base.Widget.AppCompat.ImageButton"
+        android:layout_width="355dp"
+        android:layout_height="48dp"
+        android:background="#FFF"
+        android:src="@drawable/profile_bantuan"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/KebijakanButton" />
+
+    <ImageButton
+        android:id="@+id/SyaratButton"
+        style="@style/Base.Widget.AppCompat.ImageButton"
+        android:layout_width="355dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="1dp"
+        android:background="#FFF"
+        android:src="@drawable/profile_syarat"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/BantuanButton" />
+
+    <ImageButton
+        android:id="@+id/RiwayatButton"
+        style="@style/Base.Widget.AppCompat.ImageButton"
+        android:layout_width="355dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="1dp"
+        android:background="#FFF"
+        android:src="@drawable/profile_riwayat"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/SyaratButton" />
+
+    <ImageButton
+        android:id="@+id/logoutButton"
+        style="@style/Base.Widget.AppCompat.ImageButton"
+        android:layout_width="355dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="91dp"
+        android:background="#FFF"
+        android:src="@drawable/profile_logout"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/RiwayatButton"
+        app:layout_constraintVertical_bias="0.029" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

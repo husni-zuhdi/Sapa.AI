@@ -17,6 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <View
         android:id="@+id/view"
         android:layout_width="351dp"
@@ -24,11 +25,9 @@
         android:background="@drawable/shape_back_card"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.733"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.614" />
-
+        app:layout_constraintVertical_bias="0.648" />
 
     <TextView
         android:id="@+id/Register"
@@ -57,7 +56,7 @@
         android:inputType="textEmailAddress"
         android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Register" />
 
@@ -70,9 +69,10 @@
         android:inputType="textEmailAddress"
         android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fieldUsername" />
+
 
     <EditText
         android:id="@+id/fieldEmail"
@@ -85,7 +85,7 @@
         android:maxLines="1"
         app:layout_constraintBottom_toTopOf="@+id/view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fieldPhonenumber"
         app:layout_constraintVertical_bias="0.0" />
@@ -99,10 +99,9 @@
         android:inputType="textEmailAddress"
         android:maxLines="1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fieldFullname" />
-
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
@@ -112,7 +111,7 @@
         android:hint="Password"
         android:layout_marginTop="1dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.566"
+        app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fieldEmail"
         app:passwordToggleEnabled="true">
@@ -126,7 +125,7 @@
             android:inputType="textPassword"
             android:maxLines="1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.566"
+            app:layout_constraintHorizontal_bias="0.400"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="413dp" />
     </com.google.android.material.textfield.TextInputLayout>
