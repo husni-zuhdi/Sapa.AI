@@ -9,3 +9,7 @@ Git repository for Sapa.AI (Bangkit Capstone Project by Neutr.AI (B21-CAP0093) T
 29/05/21/a : Update front-panick and machine learning services
 
 30/05/21/a : Make Speech-to-text and machine learning python files
+
+30/05/21/b : Move service account key json files to cloud storage
+
+31/05/21/a : Start build REST API with Flask

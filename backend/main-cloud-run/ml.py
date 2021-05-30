@@ -2,14 +2,7 @@ import os
 import googleapiclient.discovery
 from google.api_core.client_options import ClientOptions
 
-project="sapaai"
-region="asia-southeast1"
-model="multiclass"
-instances="test.json"
-version="v0_2"
-
-# def predict_json(project, region, model, instances, version=None):
-def predict_json(project, region, model, version=None):
+def predict_json(instances, version=None):
     """Send json data to a deployed model for prediction.
 
     Args:
@@ -25,34 +18,35 @@ def predict_json(project, region, model, version=None):
         Mapping[str: any]: dictionary of prediction results defined by the
             model.
     """
+
+    # Set service account ml_predict_req key
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS']="keys/ml_predict_key.json"
+
     # Create the ML Engine service object.
-    # To authenticate set the environment variable
-    os.environ['GOOGLE_APPLICATION_CREDENTIALS']="ml_key.json"
-    # devKey = 'AIzaSyBbbfIWN4NMV6IH7KIVig9zCK9IA-fX8LI'
-    prefix = "{}-ml".format(region) if region else "ml"
-    api_endpoint = "https://{}.googleapis.com".format(prefix)
+    api_endpoint = "https://asia-southeast1-ml.googleapis.com"
     client_options = ClientOptions(api_endpoint=api_endpoint)
     service = googleapiclient.discovery.build(
         'ml', 'v1', client_options=client_options)
-    name = 'projects/{}/models/{}'.format(project, model)
+    name = "projects/sapaai/models/multiclass"
 
     if version is not None:
         name += '/versions/{}'.format(version)
 
+
     response = service.projects().predict(
         name=name,
-        body={'instances': "saya dipukuli ayah saya"}
+        body={'instances': instances}
     ).execute()
-
-    # response = service.projects().predict(
-    #     name=name,
-    #     body={'instances': instances}
-    # ).execute()
 
     if 'error' in response:
         raise RuntimeError(response['error'])
 
     return response['predictions']
 
-test = predict_json(project, region, model, version)
-print(test)
+
+# Test Object
+# from ml import predict_json
+# instances=["saya anak yang baik"]
+# version="v0_2"
+# test = predict_json(instances, version)
+# print(test)

@@ -2,17 +2,11 @@ import os
 import json
 from google.cloud import speech
 
-# Set env variable
-os.environ['GOOGLE_APPLICATION_CREDENTIALS']="main_key.json"
-
-# Test object
-# import stt
-# gcs_uri="gs://sapaai-bucket/audio/test/test.flac"
-# var=stt.transcribe_sound(gcs_uri)
-
-
 def transcribe_sound(gcs_uri):
     """Asynchronously transcribes the audio file specified by the gcs_uri."""
+
+    # Set cloud run backend service account key
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS']="keys/main_key.json"
 
     client = speech.SpeechClient()
 
@@ -32,3 +26,8 @@ def transcribe_sound(gcs_uri):
     for result in response.results:
          text = {"transcript":result.alternatives[0].transcript}
     return text
+
+# Test object
+# import stt
+# gcs_uri="gs://sapaai-bucket/audio/test/test.flac"
+# var=stt.transcribe_sound(gcs_uri)
