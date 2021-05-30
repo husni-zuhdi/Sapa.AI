@@ -10,6 +10,4 @@ API dapat dikemas menggunakan:
 
 1. Cloud Run
 
-2. Cloud Function
-
-3. AI Platform
+2. AI Platform

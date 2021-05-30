@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sapaai",
+  "private_key_id": "ec5b003f74acdbe74f79a82aba9a7b537773d259",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCOOAz/Q5Pcxlcx\nm3Pvwojg6CE8ahNF4qqWCWlqmBb5c7HNzEwIadSGjTCdnPjvLuLrAbYbRtBffrs/\nrL9byFdmsDYFWB4YVCKIuNsriqo98Of+c0Gr8hSYDlfKbBU2Hxy8tr3GdHvp+onx\nIM2Si7/FhWqrovkAQirL7DCq116Cr9eMrRGNQuvc5nO7J2ge/FWeOfIgGu4stM1P\nmWH/aL0UPRr9t3iY+pKKcQkPiYN/XUfv7Kv6GXLJ/Yd2xn9uS96Gg2rAeWzXt31H\nFHXWQ/e1iTQTOON6XEjMvcgOA+EsvMotKr3VAN1xI/JyIW94fs0vzof7MvTDlobH\nMYCS2h8BAgMBAAECggEADNj4qJsx2XcD87fpu2oxHBMwRHFHNDAfra3kO2RJqAeI\n85DN+hEYaT7KOmTOsqnDR0xYZ4KoSoYr83q/LzMMHTtUJ/uvvU4lcAE2EGsGidGw\nXYLLNxWngVyDVwaYTHM3UP93qZzGgGq5CSLH22IbRQRSUHbIpHq1u8YGl/pcf/Tw\n48zB/NMgPzrJo1juyK2BQwDFSYeLnCIbfr65N3GbxbfyqJUtseTg9zClRAzrp1FP\n9vNYwTecr0fEA67FR/IXYdhEH+4ZeGI8v82OKv230RzczusDbHJvwyXJDEBKigKN\nQGUKKL6ou6MVcYd5zDmh3QDCwAcmpBdnYYsHKWjaKQKBgQDHRVjuSdWXdEh2WqiX\nsDDtRWjCaZYT0qYCGjjBYJgf0obNaK82rlkFO0tgnS6Nu+IuRqGwC+zSKk9tvBaY\n7lM3noOusxjIQ4s4H+V4w93P+kB4X231hNIGa6e4uftmkaQNUaH+BCtEzM69kyM2\nVcoOoWWIQQ/QQy0+15bC0UGgSQKBgQC2tNFriq649FjrNGXWTaYnMwos9ampKdRv\nZ4xxSVHcktwQD3bHbePMDxkDFicxOwlztYb+OCdd/Ugdp9JpzRdB6lgAJcbuv2/Y\nCK4v6lCLErmRO8EDPvlRolQg6i0wOXzydNuZ5dMdxaQv7m2RzsjedkFFhsLSjOUf\nfJw6xct4+QKBgA6ECLRjAIIl4FluxTU3injeQ4FV+665+4nPqy67AJng1h0EcS8E\niEuPRDBngsqkUxeX4ZNXawrsNhkCSIsfYUR98Y26UiXUdcHC4Q5pBjFuQ2ABY5ss\n77e0A+W69otENLUbqzc7yoMagDzjCP+eRDfIngLM6n/7RMJ9JehPIf6xAoGAQoau\nZmEV46SdJ+9pUVHuuQE9qEc/IqhngLUMj0dqNk2HMZXf4xfhRTEOI3CSjrt3Yplr\ncO+TbgbGln3AAOQ7nrWsm0kmGVK9b8UhX7MK5sjHptlCG2N3tsDLrzx1fcTA+SuR\ntoTXjVSkxwsi/F92BoK6m41JLQ8+cmuWG1RgFUkCgYEAs9DkIyPOqDngqhdHTzQR\n1UMXHbXqZUcuVt1fZMPrUhQofxIrQKlar1umfw0jM7rmOQmih0uqqULar67bMSJ0\nBn+opv7AsMNdRhnSaTekwCWG3QjqzbJ2cg74Gk/jiRAFpMjNfu2AOecjOF0vNgIC\nGeZKX7x+PPPJzjPs8h5szf8=\n-----END PRIVATE KEY-----\n",
+  "client_email": "cloud-run-front-panick@sapaai.iam.gserviceaccount.com",
+  "client_id": "104031169685882193190",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cloud-run-front-panick%40sapaai.iam.gserviceaccount.com"
+}
