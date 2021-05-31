@@ -1,5 +1,6 @@
 package com.project.sapaai.ui.login_register
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
@@ -8,7 +9,11 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.project.sapaai.R
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_register.*
+import kotlinx.android.synthetic.main.activity_register.fieldEmail
+import kotlinx.android.synthetic.main.activity_register.fieldPassword
+import kotlinx.android.synthetic.main.activity_register.tv_register
 
 class RegisterActivity : AppCompatActivity() {
     lateinit var auth: FirebaseAuth
@@ -81,6 +86,10 @@ class RegisterActivity : AppCompatActivity() {
                         ).show()
                     }
                 }
+        }
+        tv_register.setOnClickListener{
+            startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
+
         }
 
     }

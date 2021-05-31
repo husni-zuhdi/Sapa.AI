@@ -13,29 +13,12 @@ import com.project.sapaai.databinding.ActivityFormBinding
 import java.text.SimpleDateFormat
 import java.util.*
 
-class FormActivity : AppCompatActivity(), View.OnClickListener,DatePickerFragment.DialogDateListener {
+class FormActivity : AppCompatActivity(), View.OnClickListener{
     private lateinit var etKorban : EditText
     private lateinit var etPelaku : EditText
     private lateinit var btnForm : Button
 
-    private var binding: ActivityFormBinding? = null
-
-    companion object {
-        private const val DATE_PICKER_TAG = "DatePicker"
-    }
-
-    override fun onDialogDateSet(tag: String?, year: Int, month: Int, dayOfMonth: Int) {
-        // Siapkan date formatter-nya terlebih dahulu
-        val calendar = Calendar.getInstance()
-        calendar.set(year, month, dayOfMonth)
-        val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
-
-        // Set text dari textview once
-        binding?.fieldDate?.text = dateFormat.format(calendar.time)
-    }
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
+      override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_form)
 
@@ -45,22 +28,11 @@ class FormActivity : AppCompatActivity(), View.OnClickListener,DatePickerFragmen
 
         btnForm.setOnClickListener(this)
 
-/*        binding = ActivityFormBinding.inflate(layoutInflater)
-        setContentView(binding?.root)
 
-        // Listener one time alarm
-        binding?.btnOnceDate?.setOnClickListener(this)*/
     }
     override fun onClick(v: View?) {
         saveData()
-        if (v != null) {
-            when (v.id) {
-                R.id.btn_once_date -> {
-                    val datePickerFragment = DatePickerFragment()
-                    datePickerFragment.show(supportFragmentManager, DATE_PICKER_TAG)
-                }
-            }
-        }
+
     }
 
     private fun saveData(){
