@@ -16,6 +16,7 @@ import java.util.*
 class FormActivity : AppCompatActivity(), View.OnClickListener{
     private lateinit var etKorban : EditText
     private lateinit var etPelaku : EditText
+    private lateinit var etKronologi : EditText
     private lateinit var btnForm : Button
 
       override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +25,7 @@ class FormActivity : AppCompatActivity(), View.OnClickListener{
 
         etKorban = findViewById(R.id.fieldKorban)
         etPelaku = findViewById(R.id.fieldPelaku)
+        etKronologi = findViewById(R.id.fieldKronologi)
         btnForm = findViewById(R.id.buttonForm)
 
         btnForm.setOnClickListener(this)
@@ -38,6 +40,7 @@ class FormActivity : AppCompatActivity(), View.OnClickListener{
     private fun saveData(){
         val Nkorban: String = etKorban.text.toString().trim()
         val Ntersangka : String = etPelaku.text.toString().trim()
+        val Nkronologi : String = etKronologi.text.toString().trim()
 
         if(Nkorban.isEmpty()){
             etKorban.error = "isi nama korban!"
@@ -47,9 +50,13 @@ class FormActivity : AppCompatActivity(), View.OnClickListener{
             etPelaku.error = "isi nama tersangka!"
             return
         }
+        if(Nkronologi.isEmpty()){
+            etPelaku.error = "isi nama tersangka!"
+            return
+        }
         val ref : DatabaseReference = FirebaseDatabase.getInstance().getReference("forms")
         val userId = ref.push().key
-        val form = Form(userId!!,Nkorban,Ntersangka)
+        val form = Form(userId!!,Nkorban,Ntersangka,Nkronologi)
 
         if (userId != null){
             ref.child(userId).setValue(form).addOnCompleteListener{

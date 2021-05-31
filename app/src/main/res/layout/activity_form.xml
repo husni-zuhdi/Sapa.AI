@@ -216,12 +216,12 @@
 
     <Button
         android:id="@+id/buttonForm"
-        android:layout_width="137dp"
-        android:layout_height="32dp"
+        android:layout_width="139dp"
+        android:layout_height="36dp"
         android:layout_marginStart="91dp"
         android:layout_marginEnd="74dp"
         android:layout_marginBottom="3dp"
-        android:text="Report"
+        android:text="kirim"
         android:textColor="#FF000000"
         android:theme="@style/Theme_Bottom_Login"
         app:cornerRadius="20dp"
