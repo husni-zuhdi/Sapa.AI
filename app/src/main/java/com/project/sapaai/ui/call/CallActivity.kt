@@ -22,10 +22,7 @@ class CallActivity : AppCompatActivity() {
         binding = ActivityCallBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.callIvRekam.isEnabled = false
-
         var path = Environment.getExternalStorageDirectory().toString()+"/myrecaudio.3gp"
-        mr = MediaRecorder()
 
         supportActionBar?.title = "Call Report"
 
@@ -34,6 +31,7 @@ class CallActivity : AppCompatActivity() {
                                                                     Manifest.permission.WRITE_EXTERNAL_STORAGE), 111)
 
         binding.callIvRekam.setOnClickListener {
+            mr = MediaRecorder()
             mr.setAudioSource(MediaRecorder.AudioSource.MIC)
             mr.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP)
             mr.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB)
