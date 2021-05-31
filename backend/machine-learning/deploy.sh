@@ -1,6 +1,6 @@
 # Set environment
 PROJECT_ID=$(gcloud config list project --format "value(core.project)")
-REGION=asia-southeast-1
+REGION=asia-southeast1
 MODEL_BUCKET=gs://sapaai-bucket/backend/multi-class-model-1
 
 # Test local predict
