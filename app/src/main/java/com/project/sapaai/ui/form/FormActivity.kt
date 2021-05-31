@@ -51,7 +51,7 @@ class FormActivity : AppCompatActivity(), View.OnClickListener{
             return
         }
         if(Nkronologi.isEmpty()){
-            etPelaku.error = "isi nama tersangka!"
+            etKronologi.error = "isi nama tersangka!"
             return
         }
         val ref : DatabaseReference = FirebaseDatabase.getInstance().getReference("forms")
