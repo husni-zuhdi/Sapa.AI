@@ -1,24 +1,22 @@
 # Import packages
+from datetime import datetime
 import os
 from flask import Flask, jsonify, request
 from flask_restful import Api, Resource, reqparse, abort, fields, marshal_with
 from google.auth.environment_vars import PROJECT
 from flask_sqlalchemy import SQLAlchemy
-import firebase_admin
-from firebase_admin import credentials
-from firebase_admin import db
 
 # Import from py files
 from stt import transcribe_sound
 from ml import predict_json
 
 app = Flask(__name__)
-api = Api(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mock-database/database.db'
+api = Api(app)
 db = SQLAlchemy(app)                                                            # wraping app with Mock SQL database
 
 # Set cloud run backend service account key
-os.environ['GOOGLE_APPLICATION_CREDENTIALS']="key/main_key.json"
+os.environ['GOOGLE_APPLICATION_CREDENTIALS']="main_key.json"
 
 #Build Mock Databases
 class UsersModel(db.Model):
@@ -92,7 +90,7 @@ class PanickModel(db.Model):
     id_panick = db.Column(db.Integer, primary_key=True, nullable=False)
     id_users = db.Column(db.Integer, nullable=False)
     record_panick = db.Column(db.String(500), nullable=False)
-    upload_date_panick = db.Column(db.String(100), nullable=False)
+    upload_date_panick = db.Column(db.Date, nullable=False)
     
     def __repr__(self):
         return {"id_panick":id_panick,
@@ -108,14 +106,14 @@ class ProcessModel(db.Model):
     id_process = db.Column(db.Integer, primary_key=True, nullable=False)
     id_panick = db.Column(db.Integer, nullable=False)
     result_process = db.Column(db.String(500), nullable=False)
-    flag_layanan1 = db.Column(db.Boolean, nullable=False)
-    flag_layanan2 = db.Column(db.Boolean, nullable=False)
-    flag_layanan3 = db.Column(db.Boolean, nullable=False)
-    flag_layanan4 = db.Column(db.Boolean, nullable=False)
-    flag_layanan5 = db.Column(db.Boolean, nullable=False)
-    flag_layanan6 = db.Column(db.Boolean, nullable=False)
-    flag_layanan7 = db.Column(db.Boolean, nullable=False)
-    flag_layanan8 = db.Column(db.Boolean, nullable=False)
+    flag_layanan1 = db.Column(db.Integer, nullable=False)
+    flag_layanan2 = db.Column(db.Integer, nullable=False)
+    flag_layanan3 = db.Column(db.Integer, nullable=False)
+    flag_layanan4 = db.Column(db.Integer, nullable=False)
+    flag_layanan5 = db.Column(db.Integer, nullable=False)
+    flag_layanan6 = db.Column(db.Integer, nullable=False)
+    flag_layanan7 = db.Column(db.Integer, nullable=False)
+    flag_layanan8 = db.Column(db.Integer, nullable=False)
     
     def __repr__(self):
         return {"id_process":id_process,
@@ -184,7 +182,7 @@ class Form(Resource):
         result = FormsModel.query.filter_by(id_forms=id_forms).first()
         if not result:
             abort(404, message=f"Could not find the report with ID: {id_forms}...")
-        return result, 200
+        return result
 
     @marshal_with(form_resource_fields)
     def put(self, id_forms):
@@ -214,7 +212,8 @@ class Form(Resource):
         db.session.add(forms)                                               # Add forms to Form Database
         db.session.commit()                                                 # Commit change to Form Database
         return forms, 201
-    
+
+    @marshal_with(form_resource_fields)
     def delete(self, id_forms):
         # Masih development
         result = FormsModel.query.filter_by(id_forms=id_forms).first()
@@ -225,6 +224,52 @@ class Form(Resource):
         db.session.commit()
         return f"Form with ID: {id_forms} successfully deleted", 204
 
+# class PanickModel(db.Model):
+#     """
+#     Buil a mock SQL database for Panick table
+#     """
+#     id_panick = db.Column(db.Integer, primary_key=True, nullable=False)
+#     id_users = db.Column(db.Integer, nullable=False)
+#     record_panick = db.Column(db.String(500), nullable=False)
+#     upload_date_panick = db.Column(db.Date, nullable=False)
+    
+#     def __repr__(self):
+#         return {"id_panick":id_panick,
+#                 "id_users":id_users,
+#                 "record_panick":record_panick,
+#                 "upload_date_panick":upload_date_panick
+#         }
+
+# class ProcessModel(db.Model):
+#     """
+#     Buil a mock SQL database for Process table
+#     """
+#     id_process = db.Column(db.Integer, primary_key=True, nullable=False)
+#     id_panick = db.Column(db.Integer, nullable=False)
+#     result_process = db.Column(db.String(500), nullable=False)
+#     flag_layanan1 = db.Column(db.Integer, nullable=False)
+#     flag_layanan2 = db.Column(db.Integer, nullable=False)
+#     flag_layanan3 = db.Column(db.Integer, nullable=False)
+#     flag_layanan4 = db.Column(db.Integer, nullable=False)
+#     flag_layanan5 = db.Column(db.Integer, nullable=False)
+#     flag_layanan6 = db.Column(db.Integer, nullable=False)
+#     flag_layanan7 = db.Column(db.Integer, nullable=False)
+#     flag_layanan8 = db.Column(db.Integer, nullable=False)
+    
+#     def __repr__(self):
+#         return {"id_process":id_process,
+#                 "id_panick":id_panick,
+#                 "result_process":result_process,
+#                 "flag_layanan1":flag_layanan1,
+#                 "flag_layanan2":flag_layanan2,
+#                 "flag_layanan3":flag_layanan3,
+#                 "flag_layanan4":flag_layanan4,
+#                 "flag_layanan5":flag_layanan5,
+#                 "flag_layanan6":flag_layanan6,
+#                 "flag_layanan7":flag_layanan7,
+#                 "flag_layanan8":flag_layanan8
+#         }
+
 # Panick Put Arguments
 panick_put_args = reqparse.RequestParser()
 panick_put_args.add_argument("id_users", type=int, help="Users ID is required", required=True)
@@ -233,9 +278,11 @@ panick_put_args.add_argument("upload_date_panick", type=str, help="Upload time i
 
 # Panick Resource Fields
 panick_resource_fields = {
-    'id_panick': fields.Integer,
-    'id_process': fields.Integer,
-    'upload_date_panick': fields.String,
+    'id_forms': fields.Integer,
+    'id_users': fields.Integer,
+    'nama_korban_forms': fields.String,
+    'nama_tersangka_forms': fields.String,
+    'kronologi_forms': fields.String,
     'flag_layanan1': fields.Boolean,
     'flag_layanan2': fields.Boolean,
     'flag_layanan3': fields.Boolean,
@@ -243,8 +290,12 @@ panick_resource_fields = {
     'flag_layanan5': fields.Boolean,
     'flag_layanan6': fields.Boolean,
     'flag_layanan7': fields.Boolean,
-    'flag_layanan8': fields.Boolean
+    'flag_layanan8': fields.Boolean,
+    'foto_forms': fields.String,
+    'lokasi_forms': fields.String,
+    'upload_date_forms': fields.String
     }
+
 
 # From Service
 class Panick(Resource):
@@ -257,87 +308,41 @@ class Panick(Resource):
 
     @marshal_with(panick_resource_fields)
     def get(self, id_panick):
-        id_process = id_panick
-        panick = PanickModel.query.filter_by(id_panick=id_panick).first()
-        process = ProcessModel.query.filter_by(id_process=id_process).first()
-        if not (panick and process):
+        result = FormsModel.query.filter_by(id_panick=id_panick).first()
+        if not result:
             abort(404, message=f"Could not find the report with ID: {id_panick}...")
-
-        # Query Return
-        send_data={"id_panick":id_panick,
-                    "id_process":id_process,
-                    "upload_date_panick":panick.upload_date_panick,
-                    "flag_layanan1":process.flag_layanan1,
-                    "flag_layanan2":process.flag_layanan2,
-                    "flag_layanan3":process.flag_layanan3,
-                    "flag_layanan4":process.flag_layanan4,
-                    "flag_layanan5":process.flag_layanan5,
-                    "flag_layanan6":process.flag_layanan6,
-                    "flag_layanan7":process.flag_layanan7,
-                    "flag_layanan8":process.flag_layanan8
-                    }
-        return send_data, 200
+        return result
 
     @marshal_with(panick_resource_fields)
     def put(self, id_panick):
-        id_process = id_panick
-        args_panick = panick_put_args.parse_args()
+        args = form_put_args.parse_args()
         # Query ke database buat dapat id_panick terbaru atau
         # dari android Query terlebih dahulu ke Realtime Database dan passing id_panick sama argumen2 lainnya
-        result_panick = PanickModel.query.filter_by(id_panick=id_panick).first()
-        if result_panick:
-            abort(409, message=f"Report Panick ID: {id_panick} already taken...")
-        panick = PanickModel(id_panick=id_panick,
-                            id_users=args_panick['id_users'],
-                            record_panick=args_panick['record_panick'],
-                            upload_date_panick=args_panick['upload_date_panick']
+        result = FormsModel.query.filter_by(id_panick=id_panick).first()
+        if result:
+            abort(409, message=f"Report ID: {id_panick} already taken...")
+        forms = FormsModel(id_panick=id_panick,
+                            id_users=args['id_users'],
+                            nama_korban_forms=args['nama_korban_forms'],
+                            nama_tersangka_forms=args['nama_tersangka_forms'],
+                            kronologi_forms=args['kronologi_forms'],
+                            flag_layanan1=args['flag_layanan1'],
+                            flag_layanan2=args['flag_layanan2'],
+                            flag_layanan3=args['flag_layanan3'],
+                            flag_layanan4=args['flag_layanan4'],
+                            flag_layanan5=args['flag_layanan5'],
+                            flag_layanan6=args['flag_layanan6'],
+                            flag_layanan7=args['flag_layanan7'],
+                            flag_layanan8=args['flag_layanan8'],
+                            foto_forms=args['foto_forms'],
+                            lokasi_forms=args['lokasi_forms'],
+                            upload_date_forms=args['upload_date_forms']
                             )
-
-        # Start Processing Recorded Voices
-        text = transcribe_sound(args_panick['record_panick'])
-        instances=[text['transcript']]
-        version="v0_2"
-        pred_test = predict_json(instances, version)
-
-        # Query ke database buat dapat id_panick terbaru atau
-        # dari android Query terlebih dahulu ke Realtime Database dan passing id_panick sama argumen2 lainnya
-        result_process = ProcessModel.query.filter_by(id_process=id_process).first()
-        if result_process:
-            abort(409, message=f"Process ID: {id_process} already taken...")
-        process = ProcessModel(id_process=id_process,
-                            id_panick=id_panick,
-                            result_process=instances[0],
-                            flag_layanan1=pred_test[0][0],
-                            flag_layanan2=pred_test[0][1],
-                            flag_layanan3=pred_test[0][2],
-                            flag_layanan4=pred_test[0][3],
-                            flag_layanan5=pred_test[0][4],
-                            flag_layanan6=pred_test[0][5],
-                            flag_layanan7=pred_test[0][6],
-                            flag_layanan8=pred_test[0][7]
-                            )
-        
-        # Query Return
-        send_data={"id_panick":id_panick,
-                    "id_process":id_process,
-                    "upload_date_panick":args_panick['upload_date_panick'],
-                    "flag_layanan1":pred_test[0][0],
-                    "flag_layanan2":pred_test[0][1],
-                    "flag_layanan3":pred_test[0][2],
-                    "flag_layanan4":pred_test[0][3],
-                    "flag_layanan5":pred_test[0][4],
-                    "flag_layanan6":pred_test[0][5],
-                    "flag_layanan7":pred_test[0][6],
-                    "flag_layanan8":pred_test[0][7]
-                    }
-        
-        # Query Commit
-        db.session.add(process)
-        db.session.add(panick)
+        db.session.add(forms)
         db.session.commit()
+        return forms, 201
 
-        return send_data, 201 #send_data or panick
-
+    @marshal_with(panick_resource_fields)
     def delete(self, id_panick):
         # Masih development
         result = FormsModel.query.filter_by(id_panick=id_panick).first()
@@ -348,13 +353,35 @@ class Panick(Resource):
         db.session.commit()
         return f"Form with ID: {id_panick} successfully deleted", 204
 
-api.add_resource(Form, '/form/<int:id_forms>')
-api.add_resource(Panick, '/panick/<int:id_panick>')
+api.add_resource(Form, '/form<int:id_forms>')
+api.add_resource(Panick, '/panick<int:id_panick>')
 
-# # Test Main
-# if __name__ == "__main__":
-#     app.run(debug=True)
+# Test Main
+if __name__ == "__main__":
+    app.run(debug=True)
+
+# # Form Service
+# @app.route("/form", methods=['GET', 'POST', 'DELETE'])
+# def form():
+#     form = os.environ.get("NAME", "to Form")
+#     return jsonify(form)
+#
+# # Panick Service
+# @app.route("/panick", methods=['GET', 'POST', 'DELETE'])
+# def panick():
+#     # Text-to-speech
+#     gcs_uri="gs://sapaai-bucket/audio/test/test.flac"
+#     text = stt.transcribe_sound(gcs_uri)
+#
+#     # Variabel-variabel model
+#     instances=[text['transcript']]
+#     version="v0_2"
+#
+#     # Predict Solutions
+#     predict = predict_json(instances, version)
+#
+#     return predict
 
 # Deploy Main
-if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))
+# if __name__ == "__main__":
+#     app.run(debug=True, host="0.0.0.0", port=int(os.environ.get("PORT", 8080)))

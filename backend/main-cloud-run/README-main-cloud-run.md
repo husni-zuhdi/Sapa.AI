@@ -1,6 +1,6 @@
 # Man-cloud-run
 
-## Front-Panick
+## Panick
 
 berisi file-file untuk membangun API penghubung android dengan cloud
 
@@ -20,7 +20,7 @@ berisi file-file untuk
 
 Menggunakan Speech to Text API dari Google Cloud
 
-## Front-Form
+## Form
 
 berisi file-file untuk membangun API penghubung android dengan cloud
 

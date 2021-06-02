@@ -41,6 +41,12 @@ def predict_json(instances, version=None):
     if 'error' in response:
         raise RuntimeError(response['error'])
 
+    for i in range(len(response['predictions'][0])):
+        if response['predictions'][0][i] >= 0.15:
+            response['predictions'][0][i] = True
+        else:
+            response['predictions'][0][i] = False
+
     return response['predictions']
 
 
