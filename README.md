@@ -1,9 +1,26 @@
 # Sapa.AI
 Git repository for Sapa.AI (Bangkit Capstone Project by Neutr.AI (B21-CAP0093) Team.
 
-# Features
-1. Panick Button for emergency reports
-2. Form submission for late reports
+# Description
+
+The PPPA Ministry noted that in 2020 there were 4,116 cases of violence against women and children in Jakarta (a period of 7 months). Our independently conducted survey shows that almost 97 percent of the respondent doesn’t report the violence they have experienced or seen. However, the reporting system is still manual and not optimized. With SAPA AI there will be more and more ways available for victims to report cases of violence and make the process of handling reports more effective and efficient for the ministry of PPPA (Perlindungan Perempuan dan Anak) with the availability of additional features from SAPA AI. With the Deep Learning algorithm, we can create a reporting platform that directly classifies the types of violence experienced with the appropriate services. Through this initiative, we want to contribute to emancipated women and protect the future of our children.
+
+# Usage
+
+The next section is usage, in which you instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action.
+
+## Android
+The application of Firebase in the application for  login (authentification), account registration, and form (real-time), the application is connected to APIs from the cloud to then connect data from Android and stored in the database. The application can also save audio files to the Android internal storage, which can then be forwarded and managed by machine learning until it gets the desired classification.
+
+## Machine Learning
+we created the Indonesian reporting text dataset from the internet and we made our own survey to get an additional dataset for our machine learning model. After we preprocessing our data, then we apply to train a model to classify the reports into the Ministry of PPPA service classes. We split the dataset into train set and dev set to evaluate the model performance. We also tuned the hyperparameters to find the best-performing model. We made a function to get the desired results. Finally, we exported the best model in .pb format to be deployed in the Google Cloud Platform.
+
+## Cloud Computing
+Build a REST API for our android app with Google Cloud Run and build a Machine Learning Model with AI-Platform. We also use Speech-To-Text API to process the recorded voices into a text so our Machine Learning Model can ingest the voice-recorded reports.
+
+# Credits
+
+This project are part of capstone project for Bangkit 2021
 
 # Changelog
 10/05/21/a : Make ml-development branch
