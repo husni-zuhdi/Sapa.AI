@@ -1,4 +1,9 @@
-In the firebase console, it's set:
+# Firebase
 
-1. authentication, 
-2. rule of realtime database
+"insert the description"
+
+In the firebase console, we set:
+
+1. authentication
+
+2. realtime database

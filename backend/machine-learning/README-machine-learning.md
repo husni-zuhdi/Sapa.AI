@@ -1,13 +1,11 @@
-#Machine Learning
+# Machine Learning
 
-berisi file-file untuk
+"insert the description"
 
-1. Menyiapkan Machine Learning Model
-2. Menghubungkan speech to text ke machine learning model
-3. Mengembalikan hasil solusi ke front-panick
+Contain files:
 
-API dapat dikemas menggunakan:
+1. deploy.sh - to deploy machine learning model to ai-paltform service.
 
-1. Cloud Run
+2. ml-classification-1.ipynb - our multi classification notebook to train, validate, and test our model.
 
-2. AI Platform
+3. ml-speechrecognition-1.ipynb - our attempt to create speech recognition model. we end up use Speech to Text API provided by Google instead.

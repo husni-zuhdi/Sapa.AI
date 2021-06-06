@@ -19,3 +19,5 @@ Git repository for Sapa.AI (Bangkit Capstone Project by Neutr.AI (B21-CAP0093) T
 06/06/21/a : Finish API
 
 06/06/21/b : Fix Speech to text result
+
+06/06/21/c : Clean up the README files
