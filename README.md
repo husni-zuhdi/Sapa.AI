@@ -1,5 +1,5 @@
 # Sapa.AI
-![Logo Sapa.AI](https://github.com/Hazunanafaru/Sapa.AI/blob/main/images/sapaai.png)
+![sapaai-removebg-preview](https://user-images.githubusercontent.com/35314346/120929162-23451200-c712-11eb-8f96-be57dfe3cdb5.png)
 
 Git repository for Sapa.AI (Bangkit Capstone Project by Neutr.AI (B21-CAP0093) Team.
 
