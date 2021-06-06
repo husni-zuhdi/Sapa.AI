@@ -33,6 +33,8 @@ This is our example for Speech to Text and Machine Learning model results
 
 # Credits
 
+![Bangkit](https://github.com/Hazunanafaru/Sapa.AI/blob/main/images/bangkit.png)
+
 This project are part of capstone project for Bangkit 2021
 
 # Changelog
