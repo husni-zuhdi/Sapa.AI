@@ -15,3 +15,7 @@ Git repository for Sapa.AI (Bangkit Capstone Project by Neutr.AI (B21-CAP0093) T
 31/05/21/a : Start build REST API with Flask
 
 03/06/21/a : First Trial to Deploy the CLoud Run with Mock Database (SQLALCHEMY)
+
+06/06/21/a : Finish API
+
+06/06/21/b : Fix Speech to text result

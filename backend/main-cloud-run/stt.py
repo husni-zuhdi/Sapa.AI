@@ -24,8 +24,9 @@ def transcribe_sound(gcs_uri):
 
     # Each result is for a consecutive portion of the audio. Iterate through
     # them to get the transcripts for the entire audio file.
+    text = ""
     for result in response.results:
-         text = {"transcript":result.alternatives[0].transcript}
+        text += result.alternatives[0].transcript
     return text
 
 # # Test object
