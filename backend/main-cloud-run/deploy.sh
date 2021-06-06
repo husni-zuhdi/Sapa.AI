@@ -1,10 +1,12 @@
-# Build Container of front-panick API
-gcloud builds submit \
-  --tag gcr.io/$GOOGLE_CLOUD_PROJECT/front-panick
+# Execute this command in main-cloud-run folder
+# Set Environment Variables
+GOOGLE_CLOUD_PROJECT=sapaai
 
-# Deploy cloud run front-panick
-gcloud beta run deploy front-panick \
-  --image gcr.io/$GOOGLE_CLOUD_PROJECT/front-panick \
+# Build Container of main-cloud-run API
+gcloud builds submit --tag gcr.io/$GOOGLE_CLOUD_PROJECT/main-cloud-run
+
+# Deploy cloud run main-cloud-run
+gcloud beta run deploy main-cloud-run \
+  --image gcr.io/$GOOGLE_CLOUD_PROJECT/main-cloud-run \
   --platform managed \
-  --region asia-southeast-1 \
   --no-allow-unauthenticated
