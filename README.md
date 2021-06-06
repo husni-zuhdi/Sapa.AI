@@ -1,4 +1,6 @@
 # Sapa.AI
+![Logo Sapa.AI](https://github.com/Hazunanafaru/Sapa.AI/blob/main/images/sapaai.png)
+
 Git repository for Sapa.AI (Bangkit Capstone Project by Neutr.AI (B21-CAP0093) Team.
 
 # Description
@@ -15,8 +17,19 @@ The application of Firebase in the application for  login (authentification), ac
 ## Machine Learning
 we created the Indonesian reporting text dataset from the internet and we made our own survey to get an additional dataset for our machine learning model. After we preprocessing our data, then we apply to train a model to classify the reports into the Ministry of PPPA service classes. We split the dataset into train set and dev set to evaluate the model performance. We also tuned the hyperparameters to find the best-performing model. We made a function to get the desired results. Finally, we exported the best model in .pb format to be deployed in the Google Cloud Platform.
 
+You can download our dataset in this link : https://www.kaggle.com/fafafwzn/indonesia-violence-reporting-text
+
 ## Cloud Computing
+
+![Diagram Cloud Computing](https://github.com/Hazunanafaru/Sapa.AI/blob/main/images/mvp_diagram.jpeg)
+
 Build a REST API for our android app with Google Cloud Run and build a Machine Learning Model with AI-Platform. We also use Speech-To-Text API to process the recorded voices into a text so our Machine Learning Model can ingest the voice-recorded reports.
+
+This is our example for Speech to Text and Machine Learning model results
+
+![STT](https://github.com/Hazunanafaru/Sapa.AI/blob/main/images/result_text.png)
+
+![ML](https://github.com/Hazunanafaru/Sapa.AI/blob/main/images/result_services.jpeg)
 
 # Credits
 
