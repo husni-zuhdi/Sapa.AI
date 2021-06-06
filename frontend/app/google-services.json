@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "268540224664",
+    "firebase_url": "https://sapaai-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "sapaai",
+    "storage_bucket": "sapaai.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:268540224664:android:bf6f2ee76afb73173ddced",
+        "android_client_info": {
+          "package_name": "com.project.sapaai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "268540224664-fsc06vs4qroib9uj5nrhiimoplj269n4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6Zr4pv7zccBOXowEEFAhT0IAsUU3uZPM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "268540224664-5guq7l4jrar18lbd8blur0k1isal0ml4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
