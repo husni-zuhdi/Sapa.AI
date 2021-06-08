@@ -16,10 +16,10 @@ app = Flask(__name__)
 api = Api(app)
 
 # Set cloud run backend service account key
-os.environ['GOOGLE_APPLICATION_CREDENTIALS']="keys/main_key.json"
+os.environ['GOOGLE_APPLICATION_CREDENTIALS']="key.json"
 
 # Fetch the service account key JSON file contents
-cred = credentials.Certificate('keys/firebase-main.json')
+cred = credentials.Certificate('key.json')
 # Initialize the app with a service account, granting admin privileges
 firebase_admin.initialize_app(cred, {
     'databaseURL': 'https://sapaai-default-rtdb.asia-southeast1.firebasedatabase.app/'
