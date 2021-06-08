@@ -15,9 +15,13 @@ The PPPA Ministry noted that in 2020 there were 4,116 cases of violence against 
 3. Go to Google Cloud Platform -> Ai-Paltform -> Models
 4. Set your location and name of your model
 5. Create new version and costumize your container. For example we use this configuration:
+
 ![documentation-1](https://user-images.githubusercontent.com/35314346/121141190-e8072800-c864-11eb-94c9-a6f9075333b6.png)
+
 6. Set your autoscaling, machine-type, and service account. Example:
+
 ![documentation-2](https://user-images.githubusercontent.com/35314346/121141483-30bee100-c865-11eb-8b27-c4323b146e59.png)
+
 7. Done
 
 ## Deploy Sapa.AI API
