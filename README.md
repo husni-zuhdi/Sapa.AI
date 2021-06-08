@@ -9,6 +9,20 @@ The PPPA Ministry noted that in 2020 there were 4,116 cases of violence against 
 
 # Usage
 
+## Deploy Machine Learning Model
+1. Upload your .pb Machine Learning Model into your Cloud Storage Bucket
+2. Set a Service Account for your Machine Learning Model
+3. Go to Google Cloud Platform -> Ai-Paltform -> Models
+4. Set your location and name of your model
+5. Create new version and costumize your container. For example we use this configuration:
+![documentation-1](https://user-images.githubusercontent.com/35314346/121141190-e8072800-c864-11eb-94c9-a6f9075333b6.png)
+6. Set your autoscaling, machine-type, and service account. Example:
+![documentation-2](https://user-images.githubusercontent.com/35314346/121141483-30bee100-c865-11eb-8b27-c4323b146e59.png)
+7. Done
+
+## Deploy Sapa.AI API
+See our [`deploy.sh`](https://github.com/Hazunanafaru/Sapa.AI/blob/main/backend/main-cloud-run/deploy.sh) file in our backend/main-cloud-run folder
+
 # Contributors
 ## Android | Akbar Adi Susanto (A1941930) and Rizkina Maulida Safira (A2142082)
 The application of Firebase in the application for  login (authentification), account registration, and form (real-time), the application is connected to APIs from the cloud to then connect data from Android and stored in the database. The application can also save audio files to the Android internal storage, which can then be forwarded and managed by machine learning until it gets the desired classification.
