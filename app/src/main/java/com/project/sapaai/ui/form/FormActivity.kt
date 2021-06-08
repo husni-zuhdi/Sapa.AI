@@ -88,6 +88,15 @@ class FormActivity  : AppCompatActivity(), View.OnClickListener{
         val Ntersangka : String = etPelaku.text.toString().trim()
         val Nkronologi : String = etKronologi.text.toString().trim()
 
+        val flag1: String
+        val flag2: String
+        val flag3: String
+        val flag4: String
+        val flag5: String
+        val flag6: String
+        val flag7: String
+        val flag8: String
+
         if(Nkorban.isEmpty()){
             etKorban.error = "isi nama korban!"
             return
@@ -100,9 +109,66 @@ class FormActivity  : AppCompatActivity(), View.OnClickListener{
             etKronologi.error = "isi nama tersangka!"
             return
         }
+
+        if(checkBox1.isChecked){
+            flag1 = "1"
+        }
+        else{
+            flag1 = "0"
+        }
+
+        if(checkBox2.isChecked){
+            flag2 = "1"
+        }
+        else{
+            flag2 = "0"
+        }
+
+        if(checkBox3.isChecked){
+            flag3 = "1"
+        }
+        else{
+            flag3 = "0"
+        }
+
+        if(checkBox4.isChecked){
+            flag4 = "1"
+        }
+        else{
+            flag4 = "0"
+        }
+
+        if(checkBox5.isChecked){
+            flag5 = "1"
+        }
+        else{
+            flag5 = "0"
+        }
+
+        if(checkBox6.isChecked){
+            flag6 = "1"
+        }
+        else{
+            flag6 = "0"
+        }
+
+        if(checkBox7.isChecked){
+            flag7 = "1"
+        }
+        else{
+            flag7 = "0"
+        }
+
+        if(checkBox8.isChecked){
+            flag8 = "1"
+        }
+        else{
+            flag8 = "0"
+        }
+
         val ref : DatabaseReference = FirebaseDatabase.getInstance().getReference("forms")
         val userId = ref.push().key
-        val form = Form(userId!!,Nkorban,Ntersangka,Nkronologi)
+        val form = Form(userId!!,Nkorban,Ntersangka,flag1,flag2,flag3,flag4,flag5,flag6,flag7,flag8,Nkronologi)
 
         if (userId != null){
             ref.child(userId).setValue(form).addOnCompleteListener{
