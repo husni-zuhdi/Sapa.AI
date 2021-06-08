@@ -219,6 +219,7 @@
         android:layout_width="139dp"
         android:layout_height="36dp"
         android:layout_marginStart="91dp"
+        android:layout_marginTop="19dp"
         android:layout_marginEnd="74dp"
         android:layout_marginBottom="3dp"
         android:text="kirim"
@@ -228,8 +229,9 @@
         app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toEndOf="@+id/view"
         app:layout_constraintHorizontal_bias="0.0"
+
         app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toBottomOf="@+id/addImage"
+        app:layout_constraintTop_toBottomOf="@+id/uploadPhoto"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -275,31 +277,43 @@
         app:layout_constraintStart_toStartOf="@+id/view"
         app:layout_constraintTop_toTopOf="@+id/kronologi" />
 
-    <TextView
-        android:id="@+id/addImage"
-        android:layout_width="230dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="28dp"
-        android:ellipsize="end"
-        android:hint="tambah foto pendukung (opsional)"
-        android:maxLines="200"
-        android:textSize="13sp"
+    <Button
+        android:id="@+id/upload_photo"
+        android:layout_width="68dp"
+        android:layout_height="29dp"
+        android:layout_marginEnd="148dp"
+        android:text="upload"
+        android:textColor="#FF000000"
+        android:textSize="6sp"
+        android:theme="@style/Theme_Bottom_Login"
         app:layout_constraintEnd_toEndOf="@+id/view"
+
         app:layout_constraintTop_toBottomOf="@+id/fieldKronologi" />
 
     <ImageView
+        android:id="@+id/photo_preview"
+        android:layout_width="26dp"
+        android:layout_height="29dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="58dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/fieldKronologi" />
+
+    <ImageButton
         android:id="@+id/add_photo"
         android:layout_width="33dp"
         android:layout_height="29dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="28dp"
         android:layout_marginBottom="12dp"
+        android:background="#FFF"
         android:src="@drawable/add_photo"
         app:layout_constraintBottom_toTopOf="@+id/buttonForm"
-        app:layout_constraintEnd_toStartOf="@+id/addImage"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintEnd_toStartOf="@+id/upload_photo"
+        app:layout_constraintHorizontal_bias="0.428"
+
+        app:layout_constraintStart_toEndOf="@+id/imagePreview"
         app:layout_constraintTop_toBottomOf="@+id/fieldKronologi"
         app:layout_constraintVertical_bias="0.0" />
 
