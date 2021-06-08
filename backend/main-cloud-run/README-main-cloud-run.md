@@ -12,22 +12,36 @@ Sapa.AI API use python runtime. There are two route, forms and panick.
 
 Transcribe the recorded voices into text. We use Speech to Text API provided by Google
 
-Creating a Speech-to-Text Cloud:
+How to use Speech-to-Text API:
 
 1. Create an API key (credential)
 2. Enable Cloud Speech-to-Text API with console
-2. Export API key like that (in SSH or cloudshell): export API_KEY=<YOUR_API_KEY>
-3. Create Speech API request (fiile name ex: request.json)
-4. Call the Speech API with syntax:
-
-curl -s -H "Content-Type: application/json" \
-    -H "Authorization: Bearer "$(gcloud auth application-default print-access-token) \
-    https://speech.googleapis.com/v1/speech:recognize \
-    -d @sync-request.json
-
-5. cat result.json to view the transcription of .flac file (audio)
-6. Next
+2. Download API key like in json format and save it in this folder with name "key.json"
+3. Create Speech API request in python with uri as an argument. Example
+'''
+import stt
+uri = "gs://sapaai-bucket/audio/test/test_3.mp3"
+text = stt.transcribe_sound(uri)
+'''
+4. See the result use 'print(text)'
 
 ## Machine Learning API (ml.py)
 
-Classify the transcribed test into 8 services needed by victim.
+Classify the transcribed test into 8 services victim need.
+
+How to use our Multi Classification Model
+
+1. Create an API key (credential)
+2. Download API key like in json format and save it in this folder with name "key.json"
+3. Create request to our model in python with instance and model version as arguments. For example
+'''
+from ml import predict_json
+instances=["saya anak yang baik tetapi sering dipukuli paman saya karena selalu menolak ketika diajak bekerja di pasar"]
+version="v3"
+test = predict_json(instances, version)
+'''
+4. See the result use 'print(text)'
+
+## Deploy to Google Cloud Platform
+
+You can run deploy.sh from your linux environment. Make sure you set the GOOGLE_CLOUD_PROJECT in the deploy.sh file.
