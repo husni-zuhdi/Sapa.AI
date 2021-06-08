@@ -52,7 +52,7 @@ def predict_json(instances, version=None):
 
 # Test Object
 # from ml import predict_json
-# instances=["saya anak yang baik"]
-# version="v0_2"
+# instances=["saya anak yang baik tetapi sering dipukuli paman saya karena selalu menolak ketika diajak bekerja di pasar"]
+# version="v3"
 # test = predict_json(instances, version)
 # print(test)
