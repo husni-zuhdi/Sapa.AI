@@ -3,18 +3,11 @@ package com.project.sapaai.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.project.sapaai.R
-import com.project.sapaai.ui.form.FormActivity
-import com.project.sapaai.ui.home_form_profile.dashboard.DashboardFragment
+import com.project.sapaai.ui.home_form_profile.help.HelpFragment
 import com.project.sapaai.ui.login_register.LoginActivity
-import com.project.sapaai.ui.login_register.RegisterActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_profile.*
 import kotlinx.android.synthetic.main.activity_profile.fieldEmail
@@ -67,7 +60,7 @@ class ProfileActivity : AppCompatActivity() {
 
         }
         buttonPost.setOnClickListener{
-            startActivity(Intent(this@ProfileActivity, DashboardFragment::class.java))
+            startActivity(Intent(this@ProfileActivity, HelpFragment::class.java))
 
         }
         buttonProfile.setOnClickListener{
