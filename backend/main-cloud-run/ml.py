@@ -20,7 +20,7 @@ def predict_json(instances, version=None):
     """
 
     # Set service account ml_predict_req key
-    os.environ['GOOGLE_APPLICATION_CREDENTIALS']="keys/ml_predict_key.json"
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS']="key.json"
 
     # Create the ML Engine service object.
     api_endpoint = "https://asia-southeast1-ml.googleapis.com"
