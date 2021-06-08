@@ -6,7 +6,7 @@ def transcribe_sound(gcs_uri):
     """Asynchronously transcribes the audio file specified by the gcs_uri."""
 
     # Set cloud run backend service account key
-    os.environ['GOOGLE_APPLICATION_CREDENTIALS']="keys/main_key.json"
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS']="key.json"
 
     client = speech_v1p1beta1.SpeechClient()
 
