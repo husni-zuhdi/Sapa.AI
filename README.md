@@ -73,7 +73,7 @@ The endpoint will return 201 Response Code if Succes with `id_call` and `id_proc
 Example request:
 
 ```
-curl -X POST https://main-cloud-run-gwccks6cga-as.a.run.app/call/post -H "Content-Type: application/json" --data '{"id_users":2,"record_call":"gs://sapaai-bucket/audio/test/test_3.mp3","upload_date_call":"dua hari lalu"}'
+curl -X POST <your_API_url>/call/post -H "Content-Type: application/json" --data '{"id_users":2,"record_call":"gs://sapaai-bucket/audio/test/test_3.mp3","upload_date_call":"dua hari lalu"}'
 ```
 
 # Contributors
