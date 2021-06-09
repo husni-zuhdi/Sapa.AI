@@ -29,6 +29,7 @@
         app:layout_constraintBottom_toBottomOf="parent"/>
 
     <TextView
+        android:visibility="gone"
         android:id="@+id/call_tv_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -42,6 +43,7 @@
         android:layout_marginBottom="250dp"/>
 
     <TextView
+        android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/name"
