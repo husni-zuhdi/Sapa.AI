@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#A6D3F2">
@@ -20,6 +19,7 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view" />
+
 
     <ImageButton
         android:id="@+id/buttonHome"
@@ -66,16 +66,53 @@
         app:layout_constraintTop_toBottomOf="@+id/lokasi"
         app:layout_constraintVertical_bias="1.0" />
 
-    <ImageView
-        android:id="@+id/icon"
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/photoPreview"
         android:layout_width="97dp"
-        android:layout_height="50dp"
+        android:layout_height="84dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginStart="156dp"
+        android:layout_marginTop="8dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/ic_profile"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/add_photo"
+        android:layout_width="79dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="56dp"
+        android:background="#FFF"
+        android:text="add"
+        android:textColor="#FF000000"
+        android:theme="@style/Theme_Bottom_Login"
+        app:cornerRadius="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.157"
+        app:layout_constraintStart_toEndOf="@+id/photoPreview"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/upload_photo"
+        android:layout_width="92dp"
+        android:layout_height="34dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="40dp"
+        android:background="#FFF"
+        android:text="upload"
+        android:textColor="#FF000000"
+        android:theme="@style/Theme_Bottom_Login"
+        app:cornerRadius="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/fieldUsername"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/photoPreview"
+        app:layout_constraintTop_toBottomOf="@+id/add_photo"
+        app:layout_constraintVertical_bias="0.0" />
 
     <View
         android:id="@+id/view"
@@ -94,15 +131,15 @@
         android:layout_height="30dp"
         android:ellipsize="end"
         android:gravity="center"
-        android:textColor="#FF000000"
         android:hint="Username"
         android:maxLines="1"
+        android:textColor="#FF000000"
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/icon" />
+        app:layout_constraintTop_toBottomOf="@+id/photoPreview" />
 
     <TextView
         android:id="@+id/ttl"
